@@ -52,7 +52,7 @@ $$\sum_{o \in O} X_{ioa} \leq u_{ai} \cdot Y_a \quad \forall i \in I,\; a \in A$
 
 O objetivo original é **fracionário** (não-linear), pois tanto o numerador quanto o denominador dependem das variáveis de decisão. Para permitir o uso do CBC, o objetivo foi substituído pela seguinte heurística linear:
 
-$$\max \sum_{o \in O} \text{contO}[o] \cdot Y_o \;-\; \sum_{a \in A} \text{Uai\_lim}[a] \cdot Y_a$$
+$$\max \sum_{o \in O} \text{contO}[o] \cdot Y_o \;-\; \sum_{a \in A} \text{Uailim}[a] \cdot Y_a$$
 
 onde `Uai_lim[a]` é a capacidade total do corredor `a`. A ideia é **maximizar os itens coletados e penalizar os corredores usados**, com o peso da penalidade proporcional ao tamanho de cada corredor.
 
