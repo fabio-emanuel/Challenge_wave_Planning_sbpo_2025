@@ -38,17 +38,11 @@ A variável `X` é uma **variável de transporte tridimensional**: ela decide si
 
 **Tamanho da wave:** o total de unidades deve respeitar os limites operacionais.
 
-$$\text{LB} \leq \sum_{o \in O} \text{cont\_O}[o] \cdot Y_o \leq \text{UB}$$
-
-$$
-\text{LB} \leq \sum_{o \in O} \text{cont\_O}[o] \cdot Y_o \leq \text{UB}
-$$
-
 $$ \text{LB} \leq \sum_{o \in O} \text{contO}[o] \cdot Y_o \leq \text{UB} $$
 
 **Consistência pedido ↔ transporte:** se um pedido é selecionado, todas as suas unidades devem ser transportadas; caso contrário, nada é transportado.
 
-$$\sum_{i \in I_o} \sum_{a \in A} X_{ioa} = \text{cont\_O}[o] \cdot Y_o \quad \forall o \in O$$
+$$\sum_{i \in I_o} \sum_{a \in A} X_{ioa} = \text{contO}[o] \cdot Y_o \quad \forall o \in O$$
 
 **Capacidade dos corredores por item:** o total retirado de cada item em cada corredor não pode exceder o estoque disponível. Esta restrição também ativa `Ya[a]` quando o corredor é utilizado.
 
@@ -58,7 +52,7 @@ $$\sum_{o \in O} X_{ioa} \leq u_{ai} \cdot Y_a \quad \forall i \in I,\; a \in A$
 
 O objetivo original é **fracionário** (não-linear), pois tanto o numerador quanto o denominador dependem das variáveis de decisão. Para permitir o uso do CBC, o objetivo foi substituído pela seguinte heurística linear:
 
-$$\max \sum_{o \in O} \text{cont\_O}[o] \cdot Y_o \;-\; \sum_{a \in A} \text{Uai\_lim}[a] \cdot Y_a$$
+$$\max \sum_{o \in O} \text{contO}[o] \cdot Y_o \;-\; \sum_{a \in A} \text{Uai\_lim}[a] \cdot Y_a$$
 
 onde `Uai_lim[a]` é a capacidade total do corredor `a`. A ideia é **maximizar os itens coletados e penalizar os corredores usados**, com o peso da penalidade proporcional ao tamanho de cada corredor.
 
