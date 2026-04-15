@@ -44,7 +44,7 @@ $$
 \text{LB} \leq \sum_{o \in O} \text{cont\_O}[o] \cdot Y_o \leq \text{UB}
 $$
 
-$$ \text{LB} \leq \sum_{o \in O} \text{cont\_O}[o] \cdot Y_o \leq \text{UB} $$
+$$ \text{LB} \leq \sum_{o \in O} \text{contO}[o] \cdot Y_o \leq \text{UB} $$
 
 **Consistência pedido ↔ transporte:** se um pedido é selecionado, todas as suas unidades devem ser transportadas; caso contrário, nada é transportado.
 
